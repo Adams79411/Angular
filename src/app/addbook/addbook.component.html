@@ -48,8 +48,7 @@
                             <label for="name">Attach File</label>
                             <input type="file" id="data"
                                    required (change)="selectFile($event)"
-                                   [(ngModel)]="model.data" name="data"
-                                   #data="ngModel"></div>
+                                   name="data"></div>
                                    <p></p>
                            <p></p>
         <button type="button" (click)="save()">Create Book</button>

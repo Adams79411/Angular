@@ -59,4 +59,8 @@ export class LibraryserviceService {
   search(criteria:Number,search:String): Observable<Book[]> {
     return this.httpClient.get<Book[]>(this.api+ '/search/'+criteria+"/"+search);
   }
+
+  takeBook(bookId: Number): Observable<boolean> {
+    return this.httpClient.get<boolean>(this.api+ '/takeBook/'+bookId);
+  }
 }

@@ -5,7 +5,7 @@
 <label for="name">Search By</label>
         <div *ngFor="let option of options; let i=index">
             <div class="radio">
-              <input type="radio" id="{{option.id}}" name="radio{{i}}" [(ngModel)]="string" [value]="option.id" (change)="changeId($event)"/>
+              <input type="radio" id="{{option.id}}" name="radio{{i}}" [value]="option.id" (change)="changeId($event)"/>
               <label for="{{option.value}}">{{option.value}}</label>    
             </div>
           </div>
@@ -15,7 +15,7 @@
             <label for="name">Search Parameter</label>
             <input type="text" id="userName"
                    required
-                   [(ngModel)]="data" name="userName" (change)="valuechange($event)"></div>
+                   name="userName" (change)="valuechange($event)"></div>
                    <p></p>
                    <p></p>
                    <table>

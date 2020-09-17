@@ -13,6 +13,7 @@ import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { EdituserComponent } from './edituser/edituser.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
+import { UserbookingComponent } from './userbooking/userbooking.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SearchComponent } from './search/search.component';
     AdduserComponent,
     UserdetailsComponent,
     EdituserComponent,
-    SearchComponent
+    SearchComponent,
+    UserbookingComponent
   ],
   imports: [
     BrowserModule,

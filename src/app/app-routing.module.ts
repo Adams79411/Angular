@@ -6,6 +6,7 @@ import { ListpageComponent } from './listpage/listpage.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { EdituserComponent } from './edituser/edituser.component';
 import { SearchComponent } from './search/search.component';
+import { UserbookingComponent } from './userbooking/userbooking.component';
 
 const routes: Routes = [{path: 'list',component: ListpageComponent},
 {path: 'addBook',component: AddbookComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [{path: 'list',component: ListpageComponent},
 {path: 'viewUser',component: UserdetailsComponent},
 {path: 'editUser',component: EdituserComponent},
 {path: 'search',component: SearchComponent},
+{path: 'userBooking',component: UserbookingComponent},
 { path: '',   redirectTo: '', pathMatch: 'full' }];
 
 @NgModule({

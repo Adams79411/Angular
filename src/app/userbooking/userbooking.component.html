@@ -1,0 +1,14 @@
+<div *ngIf="errorCondition" class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <strong>Book Already Taken By Other User</strong>
+  </div>
+<label for="books">Available Books:  </label>
+  <select id="books"  (change)="optionChange($event)">
+    <option *ngFor="let book of books; let i = index" [value]="books[i].bookId" [id]="books[i].bookId">
+      {{books[i].bookName}}
+    </option>
+  </select>
+  <div>
+
+      <button id="data" (click)="takeBook($event)">Take Book</button>
+  </div>
