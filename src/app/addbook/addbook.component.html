@@ -1,0 +1,55 @@
+<h1>Adding New Book Details</h1>
+<div *ngIf="condition" class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <strong>Book Code Already Exists</strong>
+  </div>
+  <p></p>
+<div class="container">
+          <label for="code">Book Code</label>
+          <input type="text" id="bookCode"
+                 required
+                 [(ngModel)]="model.bookCode" name="bookCode" (change)="valuechange($event)"
+                 #bookCode="ngModel"></div>
+        <p></p>
+        <p></p>
+        <div class="container">
+          <label for="name">Book Name</label>
+          <input type="text" id="bookName"
+                 required
+                 [(ngModel)]="model.bookName" name="bookName"
+                 #bookName="ngModel"></div>
+                 <p></p>
+        <p></p>
+        <div class="container">
+            <label for="name">Author Name</label>
+            <input type="text" id="authorName"
+                   required
+                   [(ngModel)]="model.authorName" name="authorName"
+                   #authorName="ngModel"></div>
+                   <p></p>
+                   <p></p>
+        <div class="container">
+                    <label for="name">Publisher Name</label>
+                    <input type="text" id="publisherName"
+                           required
+                           [(ngModel)]="model.publisherName" name="publisherName"
+                           #publisherName="ngModel"></div>
+                           <p></p>
+                           <p></p>
+        <div class="container">
+                            <label for="name">Book Category</label>
+                            <input type="text" id="bookCategory"
+                                   required
+                                   [(ngModel)]="model.bookCategory" name="bookCategory"
+                                   #bookCategory="ngModel"></div>
+            <p></p>
+                           <p></p>
+                           <div class="container">
+                            <label for="name">Attach File</label>
+                            <input type="file" id="data"
+                                   required (change)="selectFile($event)"
+                                   [(ngModel)]="model.data" name="data"
+                                   #data="ngModel"></div>
+                                   <p></p>
+                           <p></p>
+        <button type="button" (click)="save()">Create Book</button>

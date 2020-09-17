@@ -1,0 +1,31 @@
+<div>
+   <div *ngIf="condition" class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <strong>Successfully Deleted {{userId}}</strong>
+    </div>
+    <div *ngIf="errorCondition" class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <strong>Delete can't performed as the data does not exists</strong>
+    </div>
+    <table>
+       <thead>
+          <tr>
+             <th>ID</th>
+             <th>User Name</th>
+             <th>Is Admin</th>
+             <th colspan=2>Operations</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor="let user of userArray">
+             <th>{{ user.userId }}</th>
+             <td>{{ user.userName }}</td>
+             <td>{{ user.admin }}</td>
+             <td>
+                <button [id]="user.userId" (click)="onClickEdit($event)">Edit</button>
+                <button [id]="user.userId" (click)="onDelete($event)">Delete</button>
+             </td>
+          </tr>
+       </tbody>
+    </table>
+ </div>

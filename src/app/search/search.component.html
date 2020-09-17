@@ -1,0 +1,40 @@
+<div *ngIf="errorCondition" class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <strong>Please select anyone of the search criteria</strong>
+  </div>
+<label for="name">Search By</label>
+        <div *ngFor="let option of options; let i=index">
+            <div class="radio">
+              <input type="radio" id="{{option.id}}" name="radio{{i}}" [(ngModel)]="string" [value]="option.id" (change)="changeId($event)"/>
+              <label for="{{option.value}}">{{option.value}}</label>    
+            </div>
+          </div>
+          <p></p>
+          <p></p>
+          <div class="container">
+            <label for="name">Search Parameter</label>
+            <input type="text" id="userName"
+                   required
+                   [(ngModel)]="data" name="userName" (change)="valuechange($event)"></div>
+                   <p></p>
+                   <p></p>
+                   <table>
+                    <thead>
+                       <tr>
+                          <th>Book Code</th>
+                          <th>Book Name</th>
+                          <th>Author Name</th>
+                          <th>Publisher Name</th>
+                          <th>Book Category</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                       <tr *ngFor="let book of bookArray">
+                          <th>{{ book.bookCode }}</th>
+                          <td>{{ book.bookName }}</td>
+                          <td>{{ book.authorName }}</td>
+                          <td>{{ book.publisherName }}</td>
+                          <td>{{ book.bookCategory }}</td>
+                       </tr>
+                    </tbody>
+                 </table>

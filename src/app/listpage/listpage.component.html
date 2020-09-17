@@ -1,0 +1,40 @@
+<div>
+    <div *ngIf="condition" class="alert">
+       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+       <strong>Successfully Deleted {{bookId}}</strong>
+     </div>
+     <div *ngIf="errorCondition" class="alert">
+       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+       <strong>Delete can't performed as the data does not exists</strong>
+     </div>
+     <table>
+        <thead>
+           <tr>
+              <th>Book Code</th>
+              <th>Book Name</th>
+              <th>Author Name</th>
+              <th>Publisher Name</th>
+              <th>Book Category</th>
+              <th>Lended User Details</th>
+              <th>Lended Date</th>
+              <th>Return Date</th>
+              <th>Operations</th>
+           </tr>
+        </thead>
+        <tbody>
+           <tr *ngFor="let book of bookArray">
+              <th>{{ book.bookCode }}</th>
+              <td>{{ book.bookName }}</td>
+              <td>{{ book.authorName }}</td>
+              <td>{{ book.publisherName }}</td>
+              <td>{{ book.bookCategory }}</td>
+              <td>{{ book.userName }}</td>
+              <td>{{ book.bookLendDate }}</td>
+              <td>{{ book.bookIssueLastDate }}</td>
+              <td>
+                 <button [id]="book.bookId" (click)="onDelete($event)">Delete</button>
+              </td>
+           </tr>
+        </tbody>
+     </table>
+  </div>

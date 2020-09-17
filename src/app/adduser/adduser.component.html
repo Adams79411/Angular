@@ -1,0 +1,24 @@
+<h1>Adding New User Details</h1>
+<div *ngIf="condition" class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <strong>Fill out user name</strong>
+  </div>
+  <p></p>
+<div class="container">
+          <label for="name">User Name</label>
+          <input type="text" id="userName"
+                 required
+                 [(ngModel)]="model.userName" name="userName" (change)="valuechange($event)"
+                 #userName="ngModel"></div>
+        <p></p>
+        <p></p>
+        <label for="name">User Type</label>
+        <div *ngFor="let option of options; let i=index">
+            <div class="radio">
+              <input type="radio" id="{{option.id}}" name="radio{{i}}" [(ngModel)]="model.isAdmin" [value]="option.id" />
+              <label for="{{option.value}}">{{option.value}}</label>    
+            </div>
+          </div>
+          <p></p>
+          <p></p>
+        <button type="button" (click)="save()">Submit</button>
